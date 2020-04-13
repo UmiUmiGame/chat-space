@@ -1,0 +1,32 @@
+.chat-main
+ .main-header
+  .main-header__left-box
+   %h2.main-header__left-box__current-group{"data-group_id" => ""}
+    test
+   %ul.main-header__left-box__member-list
+    Member:
+    %li.main-header__left-box__member-list__member masa
+  %a{:href => "/groups//edit"}
+   .main-header__edit-btn Edit
+
+ .messages
+  .massage
+   .massage__upper-info
+    %p.massage__upper-info__talker 今日のご飯
+    %p.massage__upper-info__data 2020/04/12
+   %p.massage__text ラーメン
+
+  .massage
+   .massage__upper-info
+    %p.massage__upper-info__talker 今日のご飯
+    %p.massage__upper-info__data 2020/04/12
+   %p.massage__text ラーメン
+
+ .form
+  %form.new_massage
+   .input-box
+    %input{type: "text" , class: "input-box__text" , placeholder: "type a message"}
+    %label{class: "input-box__image"}
+     = icon('fas' , 'image')
+     %input{type: "file" , class: "input-box__image__file"}
+   %input{type: "submit", class:"submit-btn" , value:"Send"}
