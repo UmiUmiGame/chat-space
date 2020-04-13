@@ -2,34 +2,3 @@
     box-sizing: border-box;
   }
 
-.left {
-      float: left;
-      width: 300px;
-      height: 100vh;
-      background-color: #253141;
-      bottom: 0;
-  }
-
- .left_head{
-     display: block;
-     height: 100px;
-    background-color: #253141;
-    margin: 0;
-}
-
-.main {
-    float: right;
-    width: calc(100vwn - 300px);
-    background-color: #ffffff;
-}
-
-.main_head{
-    background-color: #ffffff;
-    height: 100px;
-}
-
-.main_bottm{
-    background-color: #d2d2d2;
-    height: 90px;
-    width: calc(100vw - 30px);
-}
