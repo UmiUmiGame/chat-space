@@ -2,31 +2,30 @@
  .main-header
   .main-header__left-box
    %h2.main-header__left-box__current-group
-    test
+    = @group.name
    %ul.main-header__left-box__member-list
     Member:
-    %li.main-header__left-box__member-list__member masa
-  = link_to "#" do
+    %li.main-header__left-box__member-list__member 
+    - @group.group_users.each do |group_user|
+     = group_user.user.name
+  = link_to edit_group_path(params[:group_id]) do
    .main-header__edit-btn Edit
 
  .messages
+  = render @messages
   .massage
    .massage__upper-info
-    %p.massage__upper-info__talker 今日のご飯
-    %p.massage__upper-info__data 2020/04/12
-   %p.massage__text ラーメン
+    %p.massage__upper-info__talker 
+    %p.massage__upper-info__data 
+   %p.massage__text 
 
-  .massage
-   .massage__upper-info
-    %p.massage__upper-info__talker 今日のご飯
-    %p.massage__upper-info__data 2020/04/12
-   %p.massage__text ラーメン
 
  .form
-  %form.new_massage
+  = form_for [@group, @message] do |f|
    .input-box
-    %input{type: "text" , class: "input-box__text" , placeholder: "type a message"}
-    %label{class: "input-box__image"}
+    = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+    = f.label :image, class: 'input-box__image' do
      = icon('fas' , 'image')
-     %input{type: "file" , class: "input-box__image__file"}
-   %input{type: "submit", class:"submit-btn" , value:"Send"}
+    = f.file_field :image, class: 'input-box__image__file'
+   = f.submit 'Send', class: 'submit-btn' 
+
